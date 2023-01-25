@@ -45,6 +45,7 @@ loginForm.addEventListener('submit',(e)=>{
     })
     .then((res)=>{
         console.log(res.data.token);
+        localStorage.setItem("userToken",res.data.token);
         alert("Login successful");
     })
     .catch((err)=>{

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Profile page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/profile.css'>
+    <!-- <script src='main.js'></script> -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js" integrity="sha512-L4lHq2JI/GoKsERT8KYa72iCwfSrKYWEyaBxzJeeITM9Lub5vlTj8tufqYk056exhjo2QDEipJrg6zen/DDtoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <!-- <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="User image"/>
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file"/>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h5 id="username">
+                                    
+                                </h5>
+                                <!-- <h6>
+                                    Software developer intern
+                                </h6> -->
+                                <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
+                        <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Events</a>
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/> -->
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>WORK LINK</p>
+                        <a href="">Website Link</a><br/>
+                        <a href="">Bootsnipp Profile</a><br/>
+                        <a href="">Bootply Profile</a>
+                        <p>SKILLS</p>
+                        <a href="">Web Designer</a><br/>
+                        <a href="">Web Developer</a><br/>
+                        <a href="">WordPress</a><br/>
+                        <a href="">WooCommerce</a><br/>
+                        <a href="">PHP, .Net</a><br/>
+                    </div>
+                </div> -->
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>First name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p id="fname">Pravinya</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Last name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p id="lname">Kumbhare</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p id="email">dummy@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p id="">123 456 7890</p>
+                                        </div>
+                                    </div> -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>City</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p id="city">Pune</p>
+                                        </div>
+                                    </div>
+                        </div>
+                        <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Experience</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Expert</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Hourly Rate</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>10$/hr</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Total Projects</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>230</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>English Level</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Expert</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Availability</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>6 months</p>
+                                        </div>
+                                    </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Your Bio</label><br/>
+                                    <p>Your detail description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div>
+                        <label for="interest"><h4>Interests :</h4> </label>
+                            <select name="interest" id="interest">
+                                <option value="volvo">Environment</option>
+                                <option value="saab">Music</option>
+                                <option value="mercedes">Coding</option>
+                                <option value="audi">Sports</option>
+                            </select>
+                    </div>
+                    <hr>-------OR--------<hr> -->
+                    <div>
+                        <h4>Interests : </h4>
+                        <input type="checkbox" id="interest1" onclick="addInterest('63ce4add5099a9a7874ee331','environment')" name="interest1" value="environment">
+                            <label for="interest1"  onclick="addInterest('63ce4add5099a9a7874ee331','environment')" id="lab1">Environment</label><br>
+                            <input type="checkbox"  onclick="addInterest('63cf6e4df093a93279fa441c','music')" id="interest2" name="interest2" value="music">
+                            <label for="interest2" onclick="addInterest('63cf6e4df093a93279fa441c','music')" id="lab2"> Music</label><br>
+                            <input type="checkbox" onclick="addInterest('63cf8783398c07b79cb4d61d','coding')" id="interest3" name="interest3" value="coding">
+                            <label for="interest3" onclick="addInterest('63cf8783398c07b79cb4d61d','coding')" id="lab3"> Coding</label><br>
+                            <input type="checkbox" onclick="addInterest('63cf878a398c07b79cb4d61f','sports')" id="interest4" name="interest4" value="sports">
+                            <label for="interest4" onclick="addInterest('63cf878a398c07b79cb4d61f','sports')" id="lab4"> Sports</label><br>
+                    </div>
+                    <hr>
+                    <button id="btn1">Log out</button>
+                    <button id="btn2">Delete user</button>
+                </div>
+            </div>
+        </form>           
+    </div>
+    <script src="./js/profile.js"></script>
+</body>
+</html>
