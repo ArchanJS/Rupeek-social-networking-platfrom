@@ -10,7 +10,13 @@ const lab1 = document.getElementById("lab1");
 const lab2 = document.getElementById("lab2");
 const lab3 = document.getElementById("lab3");
 const lab4 = document.getElementById("lab4");
+const logoutBtn=document.getElementById('btn1');
+const deletUserBtn=document.getElementById('btn2');
 let baseUrl = 'http://localhost:8000/api/user';
+
+if(!localStorage.getItem("userToken")){
+    window.location.href="http://127.0.0.1:5500/client/Rupeek_networking_platform/index.html";
+}
 
 const config = {
     headers: {
@@ -52,5 +58,32 @@ const addInterest = (id, interest) => {
             console.log(err);
         })
 }
+
+const logout=()=>{
+    localStorage.removeItem("userToken");
+}
+
+const deleteUser=()=>{
+    axios.delete(baseUrl)
+    .then(()=>{
+        logout();
+        alert("User deleted");
+        window.location.reload();
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
+
+logoutBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    logout();
+    window.location.reload();
+})
+
+deletUserBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    deleteUser();
+})
 
 fetchUser();

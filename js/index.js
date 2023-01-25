@@ -2,6 +2,10 @@ let registerForm=document.getElementById('register-form');
 let loginForm=document.getElementById('login-form');
 let baseUrl='http://localhost:8000/api/user';
 
+if(localStorage.getItem("userToken")){
+    window.location.href="http://127.0.0.1:5500/client/Rupeek_networking_platform/event.html";
+}
+
 // Register
 registerForm.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -47,6 +51,7 @@ loginForm.addEventListener('submit',(e)=>{
         console.log(res.data.token);
         localStorage.setItem("userToken",res.data.token);
         alert("Login successful");
+        window.location.href="http://127.0.0.1:5500/client/Rupeek_networking_platform/event.html";
     })
     .catch((err)=>{
         alert("Something went wrong");

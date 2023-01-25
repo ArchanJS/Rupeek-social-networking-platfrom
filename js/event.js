@@ -4,6 +4,12 @@ let reg = document.getElementById('reg');
 let sug = document.getElementById('sug');
 
 let baseUrl = 'http://localhost:8000/api/user';
+
+if(!localStorage.getItem("userToken")){
+    window.location.href="http://127.0.0.1:5500/client/Rupeek_networking_platform/index.html";
+}
+
+
 // const utils=require('./utils');
 const config = {
     headers: {
