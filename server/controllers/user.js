@@ -1,4 +1,5 @@
 const axios=require('axios');
+const emailSender=require('nodemailer-email-sender');
 const User=require('../models/User');
 const Interest=require('../models/Interest');
 const utils=require('../utils/util');
@@ -13,6 +14,15 @@ exports.addUser=async(req,res)=>{
             data.password=password;
             const user=new User(data);
             await user.save();
+            emailSender({
+                mailService:'gmail',
+                senderUser:process.env.EMAIL_USER,
+                senderEmail:process.env.EMAIL_ID,
+                senderPassword:process.env.MAIL_PASSWORD,
+                receiverEmail:user.email,
+                subject:'Registration successful',
+                html:`${utils.emailBody}`
+                });
             res.status(201).json({message:"User created"});
         }
         else res.status(400).json({message:"Please enter all the details properly"}); 

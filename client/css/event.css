@@ -12,7 +12,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   min-height: 100vh;
-  background: #232427;
+  background: #232427 !important;
 }
 
 body .container {
@@ -161,7 +161,7 @@ body .container .card .box .content button:hover {
   padding-top: 60px;
 }
 #top{
-    border: 5px solid;
+    /* border: 5px solid; */
     display: flex;
     justify-content: center;
 }

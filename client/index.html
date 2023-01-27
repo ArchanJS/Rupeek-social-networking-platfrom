@@ -9,107 +9,131 @@
 	<link rel="stylesheet" type="text/css" href="css/sourcesanspro-font.css">
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="css/style.css"/>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js" integrity="sha512-L4lHq2JI/GoKsERT8KYa72iCwfSrKYWEyaBxzJeeITM9Lub5vlTj8tufqYk056exhjo2QDEipJrg6zen/DDtoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="form-v8">
-	<div class="page-content">
-		<div class="form-v8-content">
-			<div class="form-left">
-				<img src="images/form-v8.png" alt="form">
+<body >
+	<div style="width: 100%; height: 60px;">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+		  <div class="container-fluid">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0" id="navbar-items">
+				<!-- <li class="nav-item">
+				  <a class="nav-link active" aria-current="page" href="#">Home</a>
+				</li> -->
+			  </ul>
+			  <!-- <form class="d-flex" role="search">
+				<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success" type="submit">Search</button>
+			  </form> -->
 			</div>
-			<div class="form-right">
-				<div class="tab">
-					<div class="tab-inner">
-						<button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Sign Up</button>
-					</div>
-					<div class="tab-inner">
-						<button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
-					</div>
+		  </div>
+		</nav>
+	  </div>
+	<div class="form-v8">
+		<div class="page-content">
+			<div class="form-v8-content">
+				<div class="form-left">
+					<img src="images/form-v8.png" alt="form">
 				</div>
-				<form id="register-form" class="form-detail" action="#" method="post">
-					<div class="tabcontent" id="sign-up">
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="full_name" id="fname1" class="input-text" required>
-								<span class="label">First name</span>
-		  						<span class="border"></span>
-							</label>
+				<div class="form-right">
+					<div class="tab">
+						<div class="tab-inner">
+							<button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Sign Up</button>
 						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="full_name" id="lname1" class="input-text" required>
-								<span class="label">Last name</span>
-		  						<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="your_email" id="email1" class="input-text" required>
-								<span class="label">E-Mail</span>
-		  						<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="city" id="city" class="input-text" required>
-								<span class="label">City</span>
-								<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="password" id="password1" class="input-text" required>
-								<span class="label">Password</span>
-								<span class="border"></span>
-							</label>
-						</div>
-						<!-- <div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" required>
-								<span class="label">Comfirm Password</span>
-								<span class="border"></span>
-							</label>
-						</div> -->
-						<div class="form-row-last">
-							<input type="submit" name="register" class="register" value="Register">
+						<div class="tab-inner">
+							<button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
 						</div>
 					</div>
-				</form>
-				<form id="login-form" class="form-detail" action="#" method="post">
-					<div class="tabcontent" id="sign-in">
-						<!-- <div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="full_name_1" id="fname2" class="input-text" required>
-								<span class="label">First name</span>
-		  						<span class="border"></span>
-							</label>
-						</div> -->
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="your_email_1" id="email2" class="input-text" required>
-								<span class="label">E-Mail</span>
-		  						<span class="border"></span>
-							</label>
+					<form id="register-form" class="form-detail" action="#" method="post">
+						<div class="tabcontent" id="sign-up">
+							<div class="form-row">
+								<label class="form-row-inner">
+									<input type="text" name="full_name" id="fname1" class="input-text" required>
+									<span class="label">First name</span>
+									  <span class="border"></span>
+								</label>
+							</div>
+							<div class="form-row">
+								<label class="form-row-inner">
+									<input type="text" name="full_name" id="lname1" class="input-text" required>
+									<span class="label">Last name</span>
+									  <span class="border"></span>
+								</label>
+							</div>
+							<div class="form-row">
+								<label class="form-row-inner">
+									<input type="text" name="your_email" id="email1" class="input-text" required>
+									<span class="label">E-Mail</span>
+									  <span class="border"></span>
+								</label>
+							</div>
+							<div class="form-row">
+								<label class="form-row-inner">
+									<input type="text" name="city" id="city" class="input-text" required>
+									<span class="label">City</span>
+									<span class="border"></span>
+								</label>
+							</div>
+							<div class="form-row">
+								<label class="form-row-inner">
+									<input type="password" name="password" id="password1" class="input-text" required>
+									<span class="label">Password</span>
+									<span class="border"></span>
+								</label>
+							</div>
+							<!-- <div class="form-row">
+								<label class="form-row-inner">
+									<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" required>
+									<span class="label">Comfirm Password</span>
+									<span class="border"></span>
+								</label>
+							</div> -->
+							<div class="form-row-last">
+								<input type="submit" name="register" class="register" value="Register">
+							</div>
 						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="password_1" id="password2" class="input-text" required>
-								<span class="label">Password</span>
-								<span class="border"></span>
-							</label>
+					</form>
+					<form id="login-form" class="form-detail" action="#" method="post">
+						<div class="tabcontent" id="sign-in">
+							<!-- <div class="form-row">
+								<label class="form-row-inner">
+									<input type="text" name="full_name_1" id="fname2" class="input-text" required>
+									<span class="label">First name</span>
+									  <span class="border"></span>
+								</label>
+							</div> -->
+							<div class="form-row">
+								<label class="form-row-inner">
+									<input type="text" name="your_email_1" id="email2" class="input-text" required>
+									<span class="label">E-Mail</span>
+									  <span class="border"></span>
+								</label>
+							</div>
+							<div class="form-row">
+								<label class="form-row-inner">
+									<input type="password" name="password_1" id="password2" class="input-text" required>
+									<span class="label">Password</span>
+									<span class="border"></span>
+								</label>
+							</div>
+							<!-- <div class="form-row">
+								<label class="form-row-inner">
+									<input type="password" name="comfirm_password_1" id="comfirm_password_1" class="input-text" required>
+									<span class="label">Comfirm Password</span>
+									<span class="border"></span>
+								</label>
+							</div> -->
+							<div class="form-row-last">
+								<input type="submit" name="register" class="register" id="login" value="Sign In">
+							</div>
 						</div>
-						<!-- <div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="comfirm_password_1" id="comfirm_password_1" class="input-text" required>
-								<span class="label">Comfirm Password</span>
-								<span class="border"></span>
-							</label>
-						</div> -->
-						<div class="form-row-last">
-							<input type="submit" name="register" class="register" id="login" value="Sign In">
-						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -131,6 +155,8 @@
 		// Get the element with id="defaultOpen" and click on it
 		document.getElementById("defaultOpen").click();
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<script src='./js/nav.js'></script>
 	<script src="./js/index.js"></script>
 </body>
 </html>
