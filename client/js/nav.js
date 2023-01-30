@@ -12,7 +12,10 @@ const setItems=()=>{
     }
     else{
         html=`<li class="nav-item mx-3" id="navbar-items">
-        <a class="nav-link" href="index.html">SignIn</a>
+        <a class="nav-link" href="index.html">Sign In</a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="event.html">Events</a>
       </li>`;
     }
     navItems.innerHTML=html;

@@ -15,7 +15,7 @@ const deletUserBtn=document.getElementById('btn2');
 let baseUrl = 'http://localhost:8000/api/user';
 
 if(!localStorage.getItem("userToken")){
-    window.location.href="http://127.0.0.1:5500/client/index.html";
+    window.location.href="http://127.0.0.1:5501/client/index.html";
 }
 
 const config = {
@@ -64,11 +64,11 @@ const logout=()=>{
 }
 
 const deleteUser=()=>{
-    axios.delete(baseUrl)
+    axios.delete(baseUrl,config)
     .then(()=>{
         logout();
         alert("User deleted");
-        window.location.reload();
+        window.location.href="http://127.0.0.1:5501/client/index.html";
     })
     .catch((err)=>{
         console.log(err);
@@ -78,7 +78,7 @@ const deleteUser=()=>{
 logoutBtn.addEventListener('click',(e)=>{
     e.preventDefault();
     logout();
-    window.location.reload();
+    window.location.href="http://127.0.0.1:5501/client/index.html";
 })
 
 deletUserBtn.addEventListener('click',(e)=>{

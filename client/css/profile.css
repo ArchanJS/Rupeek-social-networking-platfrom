@@ -1,12 +1,12 @@
 body{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, rgb(0,0,0), rgb(0,0,0));
 }
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
     margin-bottom: 3%;
     border-radius: 0.5rem;
-    background: #fff;
+    background: #333;
 }
 .profile-img{
     text-align: center;
@@ -32,10 +32,10 @@ body{
     top: 0;
 }
 .profile-head h5{
-    color: #333;
+    color: aqua;
 }
 .profile-head h6{
-    color: #0062cc;
+    color: aqua;
 }
 .profile-edit-btn{
     border: none;
@@ -43,16 +43,16 @@ body{
     width: 70%;
     padding: 2%;
     font-weight: 600;
-    color: #6c757d;
+    color: aqua;
     cursor: pointer;
 }
 .proile-rating{
     font-size: 12px;
-    color: #818182;
+    color: aqua;
     margin-top: 5%;
 }
 .proile-rating span{
-    color: #495057;
+    color: aqua;
     font-size: 15px;
     font-weight: 600;
 }
@@ -65,7 +65,7 @@ body{
 }
 .profile-head .nav-tabs .nav-link.active{
     border: none;
-    border-bottom:2px solid #0062cc;
+    border-bottom:2px solid aqua;
 }
 .profile-work{
     padding: 14%;
@@ -73,13 +73,13 @@ body{
 }
 .profile-work p{
     font-size: 12px;
-    color: #818182;
+    color: aqua;
     font-weight: 600;
     margin-top: 10%;
 }
 .profile-work a{
     text-decoration: none;
-    color: #495057;
+    color: aqua;
     font-weight: 600;
     font-size: 14px;
 }
@@ -91,16 +91,22 @@ body{
 }
 .profile-tab p{
     font-weight: 600;
-    color: #0062cc;
+    color: aqua;
 }
-#btn1{
+#btn1,#btn2{
     border-radius: 5px;
-    background-color: aqua;
+    background-color: #000;
+    color: aqua;
 }
-#btn2{
-    border-radius: 5px;
+#btn1:hover,#btn2:hover{
     background-color: aqua;
+    color: #000;
+    cursor: pointer;
 }
 #interest{
     background-color: aqua;
 }
+label{
+    color: #fff;
+}
+

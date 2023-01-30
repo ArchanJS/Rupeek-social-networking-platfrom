@@ -54,9 +54,7 @@ exports.login=async(req,res)=>{
 
 exports.deleteUser=async(req,res)=>{
     try {
-        const {email,userId}=req.body;
-        if(email) await User.findOneAndDelete({email});
-        else await User.findOneAndDelete({_id:userId});
+        await User.findOneAndDelete({_id:req.user._id});
         res.status(200).json({message:"User deleted"});
     } catch (error) {
         console.log(error);
@@ -96,7 +94,13 @@ exports.getUserDetails=async(req,res)=>{
 exports.getAllEvents=async(req,res)=>{
     try {
         let response=await axios.get(`https://www.eventbriteapi.com/v3/organizations/${process.env.ORG_ID}/events/?token=${process.env.API_TOKEN}`);
-        res.status(200).send(response.data.events);
+        response=response.data.events;
+        if(req.user) {
+            let eventsObj=utils.registeredEvents(req.user);
+            console.log(eventsObj);
+            response=response.filter((e)=>eventsObj[`${e.id}`]===undefined);
+        }
+        res.status(200).send(response);
     } catch (error) {
         console.log(error);
         res.status(500).json({message:"Internal server error"});
@@ -105,12 +109,13 @@ exports.getAllEvents=async(req,res)=>{
 
 exports.suggestEvents=async(req,res)=>{
     try {
-        let venue_id=utils.getVenueId(req.user.city);
+        let venue_id=utils.getVenueId(req.user.city.toLowerCase());
+        let eventsObj=utils.registeredEvents(req.user);
         // console.log(venue_id);
         let response=await axios.get(`https://www.eventbriteapi.com/v3/organizations/${process.env.ORG_ID}/events/?token=${process.env.API_TOKEN}`);
         // console.log(events.data);
         // console.log(events.length);
-        let events=response.data.events.filter(e=>e.venue_id===venue_id&&req.user.interests.includes(e.name.html));
+        let events=response.data.events.filter(e=>e.venue_id===venue_id&&req.user.interests.includes(e.name.html)&&eventsObj[`${e.id}`]===undefined);
         res.status(200).send(events);
     } catch (error) {
         console.log(error);
@@ -121,11 +126,20 @@ exports.suggestEvents=async(req,res)=>{
 
 exports.registerForEvent=async(req,res)=>{
     try {
-        let params=req.params;
-        await User.findOneAndUpdate({_id:req.user._id},{
-            $addToSet:{events:params.id}
-        });
-        res.status(200).json({message:"Registration successful"});
+        let params=req.params,message="Registration";
+        let {register}=req.body;
+        if(register){
+            await User.findOneAndUpdate({_id:req.user._id},{
+                $addToSet:{events:params.id}
+            });
+        }
+        else{
+            await User.findOneAndUpdate({_id:req.user._id},{
+                $pull:{events:params.id}
+            });
+            message="Cancellation"
+        }
+        res.status(200).json({message:`${message} successful`});
     } catch (error) {
         console.log(error);
         res.status(500).json({message:"Internal server error"});

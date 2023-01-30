@@ -50,6 +50,14 @@ exports.generateToken =(_id)=> {
     return obj[city];
   }
 
+  exports.registeredEvents=(user)=>{
+    let events={};
+    user.events.forEach((e)=>{
+      events[e]=1;
+    });
+    return events;
+  }
+
 
   exports.emailBody=`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" style="width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
@@ -154,7 +162,7 @@ exports.generateToken =(_id)=> {
                         <td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:18px;color:#666666;font-size:12px"><em>With love, the RSNP Team</em></p></td>
                        </tr>
                        <tr style="border-collapse:collapse">
-                        <td align="center" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px"><span class="es-button-border" style="border-style:solid;border-color:#333333;background:#F8EDEB;border-width:1px;display:inline-block;border-radius:0px;width:auto"><a href="http://127.0.0.1:5500/client/index.html" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#333333;font-size:16px;border-style:solid;border-color:#F8EDEB;border-width:10px 20px 10px 20px;display:inline-block;background:#F8EDEB;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:19px;width:auto;text-align:center"><!--[if !mso]><!-- --><img src="https://cdn-icons-png.flaticon.com/512/152/152533.png" alt="icon" width="16" style="display:inline-block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;vertical-align:middle;margin-right:10px" align="absmiddle"><!--<![endif]-->Login</a></span></td>
+                        <td align="center" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px"><span class="es-button-border" style="border-style:solid;border-color:#333333;background:#F8EDEB;border-width:1px;display:inline-block;border-radius:0px;width:auto"><a href="http://127.0.0.1:5501/client/index.html" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#333333;font-size:16px;border-style:solid;border-color:#F8EDEB;border-width:10px 20px 10px 20px;display:inline-block;background:#F8EDEB;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:19px;width:auto;text-align:center"><!--[if !mso]><!-- --><img src="https://cdn-icons-png.flaticon.com/512/152/152533.png" alt="icon" width="16" style="display:inline-block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;vertical-align:middle;margin-right:10px" align="absmiddle"><!--<![endif]-->Login</a></span></td>
                        </tr>
                      </table></td>
                    </tr>

@@ -10,6 +10,7 @@ exports.protect=async(req,res,next)=>{
         if(!token){
             throw new Error("User unauthorized!");
         }
+        console.log(token);
         const verifiedToken=jwt.verify(token,process.env.SECRET_KEY);
         const user= await User.findOne({_id:verifiedToken._id});
         if(!user){

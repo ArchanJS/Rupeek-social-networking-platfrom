@@ -3,7 +3,7 @@ let loginForm=document.getElementById('login-form');
 let baseUrl='http://localhost:8000/api/user';
 
 if(localStorage.getItem("userToken")){
-    window.location.href="http://127.0.0.1:5500/client/event.html";
+    window.location.href="http://127.0.0.1:5501/client/event.html";
 }
 
 // Register
@@ -51,7 +51,7 @@ loginForm.addEventListener('submit',(e)=>{
         console.log(res.data.token);
         localStorage.setItem("userToken",res.data.token);
         alert("Login successful");
-        window.location.href="http://127.0.0.1:5500/client/event.html";
+        window.location.href="http://127.0.0.1:5501/client/event.html";
     })
     .catch((err)=>{
         alert("Something went wrong");
